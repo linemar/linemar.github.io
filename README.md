@@ -1,89 +1,41 @@
-# [TeXt Theme](https://github.com/kitian616/jekyll-TeXt-theme)
+基于 [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 主题定制化的个人博客，博客内容已转移到 `blog` 分支，`master` 将作为模板使用。[此处进入我的博客](https://nihil.cc/)。
 
-[![license](https://img.shields.io/github/license/kitian616/jekyll-TeXt-theme.svg)](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/LICENSE)
-[![Gem Version](https://img.shields.io/gem/v/jekyll-text-theme.svg)](https://github.com/kitian616/jekyll-TeXt-theme/releases)
-[![Travis](https://img.shields.io/travis/kitian616/jekyll-TeXt-theme.svg)](https://travis-ci.org/kitian616/jekyll-TeXt-theme)
-[![Tip Me via PayPal](https://img.shields.io/badge/PayPal-tip%20me-1462ab.svg?logo=paypal)](https://www.paypal.me/kitian616)
-[![Tip Me via Bitcoin](https://img.shields.io/badge/Bitcoin-tip%20me-f7931a.svg?logo=bitcoin)](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/3Fkufxcw2xd8HnaRJBNK4ccdtkUDyyNu4V.jpg)
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
 
-![TeXt Theme](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.jpg)
+使用之前请先参考原版 Chirpy 的[使用教程](https://chirpy.cotes.page/posts/getting-started/)。
 
-![TeXt Theme Details](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-layouts.png)
+与原版 Chirpy 不同的点在于：
 
-TeXt is a super customizable Jekyll theme for personal site, team site, blog, project, documentation, etc. Similar to iOS 11 style, it has large and prominent titles, round buttons and cards.
+* 在原版支持的评论系统 [Disqus](https://disqus.com/)，[Utterances](https://utteranc.es/) 和 [Giscus](https://giscus.app/zh-CN) 外，增加对 [Waline](https://waline.js.org/) 评论系统的支持，参见 `_config.yml` 里的 `comments.waline`。
+* 使用[知乎式 404 界面](https://404.life/564.html)，可以返回首页或者返回上一页。
+* 新增了分享到 Line，QQ，QQ 空间和微博，参见 `_data/share.yml`。
+* 使用 [iconfont](https://www.iconfont.cn/) 取代 [Font Awesome](https://fontawesome.com/)，有更多的图标选择空间，参见 `_config.yml` 里的 `iconfont_css`。
+* 右侧边栏添加了外部链接块，参见 `_data/external_links.yml`。
+* 可以自由地控制在帖子中显示右侧边栏哪些块。参见 `_config.yml` 里的 `panel`。
+* 添加了子域页。参见 `_data/subdomain.yml`。不需要该页面的情况下删除 `_tabs/subdomain.md` 即可。
+* 添加了 `<details>` 标签的样式，同时调整了 blockquote 的样式。
+* 使用改自 [`just the docs`](https://github.com/pmarsceill/just-the-docs) 的表格样式。
+* 将代码染色应用到了行内代码段，例如 `` `let fuck_rust = 114514;`{:.language-rust} ``。
+* 使用 [Fira Code](https://github.com/tonsky/FiraCode) 作为代码段字体。默认对行内代码不开启连体（Ligature），对块代码开启。因为某些原因，在 shell 语言中禁用连体。
+* 暗色主题时，标题和加粗内容在白色文字之中难以区分，增加发光效果以突出显示。
+* 可以配置高亮代码段中的某些行，参考[此处](http://nihil.cc/posts/highlight_lines_for_jekyll/#%E4%BE%8B%E5%AD%90)。
+* 运行代码显示输出结果（开发中，目前支持部分语言），需要在代码段的下一行添加 `{: run="lang" }`，例如：
 
-**[Change Log](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/CHANGELOG.md)** | **[中文](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/README-zh.md)**
+    ````markdown
+    ```rust
+    fn main() {
+        println!("hello world");
+    }
+    ```
+    {: run="rust" }
+    ````
 
-## Features
+    语言支持情况：
+    | 已支持的语言 | `run="lang"` 参数 | 后端 |
+    | :-: | :-: | :-: |
+    | C++ | `run="cpp"` | [Coliru](https://coliru.stacked-crooked.com/) |
+    | JavaScript | `run="javascript"` | N/A (本地) |
+    | Python | `run="python"` | [Online Python](https://www.online-python.com/) |
+    | Rust | `run="rust"` | [Rust Playground](https://play.rust-lang.org/) |
 
-- Responsive
-- Semantic HTML
-- Skins
-- Highlight Theme
-- Internationalization
-- Search
-- Table of contents
-- Authors
-- Additional styles (alert, tag, image, icon, button, grid, etc)
-- Extensions (audios, videos, slides, demos)
-- Markdown enhancements ([MathJax](https://www.mathjax.org/), [mermaid](https://mermaidjs.github.io/), [chartjs](http://www.chartjs.org/))
-- Sharing ([AddToAny](https://www.addtoany.com/), [AddThis](https://www.addthis.com/))
-- Comments ([Disqus](https://disqus.com/), [Gitalk](https://gitalk.github.io/), [Valine](https://valine.js.org/en/))
-- Pageview ([LeanCloud](https://leancloud.cn/))
-- Analytics ([Google Analytics](https://analytics.google.com/analytics/web/))
-- RSS ([jekyll-feed](https://github.com/jekyll/jekyll-feed))
-
-## Skins
-
-TeXt has 6 built-in skins, you can also set up your own skin.
-
-| `default` | `dark` | `forest` |
-| --- |  --- | --- |
-| ![Default](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_default.jpg) | ![Dark](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_dark.jpg) | ![Forest](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_forest.jpg) |
-
-| `ocean` | `chocolate` | `orange` |
-| --- |  --- | --- |
-| ![Ocean](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_ocean.jpg) | ![Chocolate](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_chocolate.jpg) | ![Orange](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_orange.jpg) |
-
-### Highlight Theme
-
-TeXt use [Tomorrow](https://github.com/chriskempson/tomorrow-theme) as the highlight theme.
-
-| `tomorrow` | `tomorrow-night` | `tomorrow-night-eighties` | `tomorrow-night-blue` | `tomorrow-night-bright` |
-| --- |  --- | --- | --- |  --- |
-| ![Tomorrow](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow.png) | ![Tomorrow Night](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night.png) | ![Tomorrow Night Eighties](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-eighties.png) | ![Tomorrow Night Blue](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-blue.png) | ![Tomorrow Night Bright](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-bright.png) |
-
-## Documentation
-
-### Start
-
-- [Quick Start](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/quick-start)
-- [Update from 1.x to 2.x](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/update-from-1-to-2)
-
-### Customization
-
-- [Configuration](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/configuration)
-- [Navigation](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/navigation)
-- [Layouts](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/layouts)
-- [Logo and Favicon](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/logo-and-favicon)
-- [Authors](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/authors)
-- [Internationalization](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/i18n)
-
-### Content
-
-- [Writing Posts](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/writing-posts)
-- [Additional styles](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/additional-styles)
-- [Extensions](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/extensions)
-- [Markdown Enhancements](https://kitian616.github.io/jekyll-TeXt-theme/docs/en/markdown-enhancements)
-
-## Demo Pages
-
-| Name | Description |
-| --- | --- |
-| [Home](https://kitian616.github.io/jekyll-TeXt-theme/test/) | Home page |
-| [Archive](https://kitian616.github.io/jekyll-TeXt-theme/archive.html) | Archive page |
-| [Layout Examples](https://kitian616.github.io/jekyll-TeXt-theme/samples.html) | Examples for different layouts |
-
-## License
-
-TeXt Theme is [MIT licensed](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/LICENSE).
+通常，每周会至少 merge 一次 [`upstream/master`](https://github.com/cotes2020/jekyll-theme-chirpy) 以追踪新的功能。

@@ -16,7 +16,7 @@ timezone: Asia/Shanghai
 
 # jekyll-seo-tag 设置 › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: Nihil       # 主标题
+title: Linemar       # 主标题
 
 tagline: Nichts Hsu   # 副标题
 
@@ -24,7 +24,7 @@ description: >-                        # 由 seo meta 和 atom feed 使用
   Nichts Hsu 的个人博客
 
 # 填入你的网站的协议和域名，例如，'https://username.github.io'
-url: 'https://nihil.cc'
+url: 'https://linemar.github.io'
 
 author: Nichts Hsu    # 全名
 

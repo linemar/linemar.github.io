@@ -2,8 +2,8 @@
 title: ClickHouse源码分析 -- 源码目录
 author: Linemar
 date: 2022-11-24 12:21:00 +0800
-categories: [ClickHouse]
-tags: [ClickHouse源码分析, ClickHouse, 源码分析]
+categories: [OLAP, ClickHouse源码分析]
+tags: [ClickHouse]
 ---
 
 # ClickHouse源码分析 -- 源码目录
